@@ -3,6 +3,7 @@
 
 Avl::Avl() {
     root = 0;
+    cantidadNodos = 0;
 }
 
 Avl::~Avl() {
@@ -15,7 +16,7 @@ int Avl::insert(int valor) {
 
 int  Avl::insert(int valor, Node*& root) {
     if (root == 0) {
-        Node* nuevo = new Node(valor);
+        Node* nuevo = new Node(valor, cantidadNodos++);
         root = nuevo;
         return 0;
     }

@@ -27,6 +27,7 @@ private:
     void rotarIzqDoble(Node*&);
     void rotarDerDoble(Node*&);
     void balance(Node*&);
+    int cantidadNodos;
 
 };
 
