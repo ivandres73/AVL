@@ -23,7 +23,7 @@ Node::Node(int valor, int num) {
 }
 
 Node::Node(int valor, Node * padre, int num) {
-    valor = valor;
+    value = valor;
     numNodo = num;
     right = 0;
     left = 0;
@@ -39,8 +39,20 @@ char *Node::toChar() {
     pos += 4;
     memcpy(&datos[pos], &value, 4);
     pos += 4;
+    memcpy(&datos[pos], &rheight, 4);
+    pos += 4;
+    memcpy(&datos[pos], &lheight, 4);
+    pos += 4;
+    return datos;
 }
 
-void Node::fromChar(char *) {
-
+void Node::fromChar(char * datos) {
+    int pos = 4;
+    memcpy(&numNodo, &datos[pos], 4);
+    pos += 4;
+    memcpy(&value, &datos[pos], 4);
+    pos += 4;
+    memcpy(&rheight, &datos[pos], 4);
+    pos += 4;
+    memcpy(&lheight, &datos[pos], 4);
 }
